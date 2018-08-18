@@ -1,0 +1,21 @@
+import { HomeModule } from './home/home.module';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: 'home',
+    loadChildren: () => HomeModule
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
